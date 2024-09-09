@@ -26,6 +26,7 @@ public class boj3020_hb {
         int minCnt = 0;
         for(int i = 1; i <= H; i++){
             int res = binary_search(i, bottom) + binary_search(H - i + 1, top);
+
             if(min == res){
                 minCnt++;
             }else if(min > res){
@@ -41,11 +42,21 @@ public class boj3020_hb {
         int r = arr.length;
         while(l < r){
             int mid = (l + r) / 2;
+<<<<<<< Updated upstream
             if(arr[mid] < target)
                 l = mid + 1;
             else
                 r = mid;
         }
         return arr.length - r;
+=======
+            if (arr[mid] >= target) {
+                r = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return arr.length - l;
+>>>>>>> Stashed changes
     }
 }
